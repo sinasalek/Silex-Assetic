@@ -4,11 +4,8 @@ namespace SilexAssetic;
 
 use SilexAssetic\Assetic\Dumper;
 
-use Pimple\Container;
-use Pimple\ServiceProviderInterface;
-
 use Silex\Application;
-use Silex\Api\BootableProviderInterface;
+use Silex\ServiceProviderInterface;
 
 use Assetic\AssetManager;
 use Assetic\FilterManager;
@@ -20,9 +17,9 @@ use Assetic\Cache\FilesystemCache;
 use Assetic\Extension\Twig\TwigFormulaLoader;
 use Assetic\Extension\Twig\AsseticExtension;
 
-class AsseticServiceProvider implements ServiceProviderInterface, BootableProviderInterface
+class AsseticServiceProvider implements ServiceProviderInterface
 {
-    public function register(Container $app)
+    public function register(Application $app)
     {
         $app['assetic.options'] = array();
 
